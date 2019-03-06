@@ -174,14 +174,14 @@ setup.kibana:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["{{elk_server_fqdn}}:5400"]
+  hosts: ["{{elk_server_fqdn}}:5044"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
   ssl.certificate_authorities: ["/etc/ssl/elk_certs/{{elk_server_fqdn}}.crt"]
 
   # Certificate for SSL client authentication
-  ssl.certificate: "/etc/ssl/elk_certs/{{elk_server_fqdn}}l.crt"
+  ssl.certificate: "/etc/ssl/elk_certs/{{elk_server_fqdn}}.crt"
 
   # Client Certificate Key
   ssl.key: "/etc/ssl/elk_certs/{{elk_server_fqdn}}.key"
