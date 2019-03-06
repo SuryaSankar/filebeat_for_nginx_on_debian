@@ -62,11 +62,19 @@ filebeat.inputs:
   # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
   #multiline.match: after
 
-filebeat.prospectors:
-- input_type: log
+- type: log
   paths:
-    - /var/log/nginx/*.log
-  exclude_files: ['\.gz$']
+    - /var/log/nginx/access.log.*
+  fields:
+    log_type: nginx_access
+  exclude_files: ['.gz$']
+
+- type: log
+  paths:
+    - /var/log/nginx/error.log.*
+  fields:
+    log_type: nginx_error
+  exclude_files: ['.gz$']
 
 
 #============================= Filebeat modules ===============================
