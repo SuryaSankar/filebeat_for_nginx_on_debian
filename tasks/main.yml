@@ -17,8 +17,8 @@
     src: "{{elk_ssl_key_path}}"
     dest: /etc/ssl/elk_certs/{{elk_server_fqdn}}.key
 
-- name: Ensuring openjdk is installed
-  apt: name=openjdk-8-jre
+# - name: Ensuring openjdk is installed
+#   apt: name=openjdk-8-jre
 
 - name: Installing apt key
   apt_key:
