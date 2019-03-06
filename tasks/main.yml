@@ -38,6 +38,7 @@
   template:
     src: ../templates/filebeat.yml.j2
     dest: /etc/filebeat/filebeat.yml
+    mode: 0644
 
 - name: Enabling and starting filebeat as a systemd service
   systemd:
