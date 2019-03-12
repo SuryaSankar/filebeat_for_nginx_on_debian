@@ -9,13 +9,13 @@
 
 - name: Copy ssl cert
   copy:
-    src: "{{elk_ssl_cert_path}}"
-    dest: /etc/ssl/elk_certs/{{elk_server_fqdn}}.crt
+    src: "{{ elk_ssl_cert_path }}"
+    dest: /etc/ssl/elk_certs/{{ elk_server_fqdn }}.crt
 
 - name: Copy ssl private key
   copy:
-    src: "{{elk_ssl_key_path}}"
-    dest: /etc/ssl/elk_certs/{{elk_server_fqdn}}.key
+    src: "{{ elk_ssl_key_path }}"
+    dest: /etc/ssl/elk_certs/{{ elk_server_fqdn }}.key
 
 # - name: Ensuring openjdk is installed
 #   apt: name=openjdk-8-jre
@@ -36,7 +36,7 @@
 
 - name: Copy filebeat conf for nginx logs
   template:
-    src: ../templates/filebeat.yml.j2
+    src: templates/filebeat.yml.j2
     dest: /etc/filebeat/filebeat.yml
     mode: 0644
 
