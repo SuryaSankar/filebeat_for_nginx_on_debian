@@ -1,4 +1,4 @@
-- hosts: nginx_servers_to_be_monitored
+- hosts: nginx_hosts_to_be_monitored
   tasks:
     - name: Installing Filebeat and sending nginx logs
       include: main.yml
